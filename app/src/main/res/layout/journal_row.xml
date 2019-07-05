@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="13dp"
+    app:cardElevation="15dp"
+    android:background="@drawable/shape"
+    app:cardBackgroundColor="@color/bg_card"
+    android:layout_margin="5dp"
+    app:contentPadding="3dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_edittext"
+        android:backgroundTint="@color/bg_share"
+        android:alpha="0.8"
+        android:gravity="end"
+        android:elevation="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kamalakar"
+            android:textColor="@color/startcolor"
+            android:id="@+id/name"
+            android:layout_gravity="start"
+            android:layout_weight="2"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_clear_black_24dp"
+            android:background="@android:color/transparent"
+            android:id="@+id/delete"
+            android:layout_marginRight="3dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/share"
+            android:layout_marginRight="5dp"
+            android:src="@android:drawable/ic_menu_share"
+            android:background="@android:color/transparent"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/list_imageview"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="360dp"
+            android:layout_height="180dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/scenary" />
+
+        <TextView
+            android:id="@+id/list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Title"
+            android:inputType="text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/list_thought"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Thoughts..."
+            android:inputType="textMultiLine"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/list_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:text="Date created" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
