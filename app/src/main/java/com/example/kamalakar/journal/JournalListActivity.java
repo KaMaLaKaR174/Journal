@@ -1,7 +1,7 @@
 package com.example.kamalakar.journal;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
+//import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -57,7 +57,7 @@ public class JournalListActivity extends AppCompatActivity {
 
         authStateListener=new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            public void onAuthStateChanged(FirebaseAuth firebaseAuth) {
 
             }
         };
@@ -106,6 +106,7 @@ public class JournalListActivity extends AppCompatActivity {
                         Journal journal=snapshot.toObject(Journal.class);
                         journals.add(journal);
 
+
                     }
                     recyclerviewadapter=new ListViewAdapter(JournalListActivity.this,journals);
                     recyclerView.setAdapter(recyclerviewadapter);
@@ -118,7 +119,7 @@ public class JournalListActivity extends AppCompatActivity {
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onFailure(@NonNull Exception e) {
+            public void onFailure( Exception e) {
 
             }
         });
