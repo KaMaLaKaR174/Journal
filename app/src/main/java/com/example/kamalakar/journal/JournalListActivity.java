@@ -2,6 +2,7 @@ package com.example.kamalakar.journal;
 
 import android.content.Intent;
 //import android.support.annotation.NonNull;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +27,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class JournalListActivity extends AppCompatActivity {
 
@@ -44,7 +46,7 @@ public class JournalListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_list);
-        getSupportActionBar().setElevation(0);
+        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
         getSupportActionBar().setTitle("Your Journals");
         mAuth=FirebaseAuth.getInstance();
         currentuser=mAuth.getCurrentUser();
@@ -57,7 +59,7 @@ public class JournalListActivity extends AppCompatActivity {
 
         authStateListener=new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onAuthStateChanged(FirebaseAuth firebaseAuth) {
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
             }
         };
@@ -101,6 +103,7 @@ public class JournalListActivity extends AppCompatActivity {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 if(!queryDocumentSnapshots.isEmpty()){
+
                     journals.clear();
                     for(QueryDocumentSnapshot snapshot:queryDocumentSnapshots){
                         Journal journal=snapshot.toObject(Journal.class);
@@ -119,7 +122,7 @@ public class JournalListActivity extends AppCompatActivity {
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onFailure( Exception e) {
+            public void onFailure( @NonNull  Exception e) {
 
             }
         });
